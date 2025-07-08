@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Chat() {
+export  function Chat() {
   const [messages, setMessages] = useState([
     { from: 'luna', text: 'Ahoj krásný, na co myslíš dneska? 💕' }
   ]);
