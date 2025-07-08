@@ -1,4 +1,4 @@
-export default function Home() {
+export default function () {
   return (
     <div style={{ 
       display: "flex", 
@@ -15,7 +15,7 @@ export default function Home() {
 }
 import Link from 'next/link';
 
-export default function Home() {
+export default function () {
   return (
     <div style={{
       display: 'flex',
