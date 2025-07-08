@@ -15,7 +15,7 @@ export default function () {
 }
 import Link from 'next/link';
 
-export default function () {
+export  function () {
   return (
     <div style={{
       display: 'flex',
