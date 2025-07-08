@@ -1,21 +1,7 @@
-export default function () {
-  return (
-    <div style={{ 
-      display: "flex", 
-      flexDirection: "column", 
-      alignItems: "center", 
-      justifyContent: "center", 
-      height: "100vh", 
-      fontFamily: "sans-serif" 
-    }}>
-      <h1>🧠 Vítej na stránce Luna AI</h1>
-      <p>Vaše AI modelka je připravena!</p>
-    </div>
-  );
-}
+
 import Link from 'next/link';
 
-export  function () {
+export default function Domu() {
   return (
     <div style={{
       display: 'flex',
@@ -60,5 +46,3 @@ export  function () {
     </div>
   );
 }
-
-
