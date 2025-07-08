@@ -1,22 +1,3 @@
-export default function Chat() {
-  return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '100vh',
-      fontFamily: 'Arial, sans-serif',
-      padding: '2rem',
-      backgroundColor: '#222',
-      color: '#eee',
-      textAlign: 'center',
-    }}>
-      <h1>Chat s Lunou</h1>
-      <p>Sem přijde tvůj chat s AI modelkou.</p>
-    </div>
-  );
-}
 import { useState } from 'react';
 
 export default function Chat() {
@@ -62,59 +43,46 @@ export default function Chat() {
         border: '1px solid #333',
         borderRadius: '1rem',
         padding: '1rem',
-        marginBottom: '1rem',
-        background: '#111'
+        marginBottom: '1rem'
       }}>
-        {messages.map((msg, i) => (
-          <div
-            key={i}
-            style={{
-              marginBottom: '0.75rem',
-              textAlign: msg.sender === 'user' ? 'right' : 'left'
-            }}
-          >
-            <div style={{
-              display: 'inline-block',
-              backgroundColor: msg.sender === 'user' ? '#00bfa6' : '#333',
-              color: msg.sender === 'user' ? '#111' : '#fff',
-              padding: '0.75rem 1rem',
-              borderRadius: '1rem',
-              maxWidth: '70%'
-            }}>
-              {msg.text}
-            </div>
+        {messages.map((msg, index) => (
+          <div key={index} style={{
+            marginBottom: '0.5rem',
+            textAlign: msg.sender === 'luna' ? 'left' : 'right'
+          }}>
+            <strong>{msg.sender === 'luna' ? 'Luna' : 'Ty'}:</strong> {msg.text}
           </div>
         ))}
       </div>
 
       <div style={{ display: 'flex', gap: '0.5rem' }}>
         <input
+          type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-          placeholder="Napiš něco Luně..."
           style={{
             flex: 1,
-            padding: '1rem',
-            borderRadius: '1rem',
-            border: 'none',
-            outline: 'none',
-            fontSize: '1rem'
+            padding: '0.5rem',
+            borderRadius: '0.5rem',
+            border: '1px solid #555',
+            backgroundColor: '#333',
+            color: '#fff'
           }}
+          placeholder="Napiš něco Luně..."
         />
         <button
           onClick={handleSend}
           style={{
-            backgroundColor: '#00bfa6',
-            color: '#111',
+            padding: '0.5rem 1rem',
+            backgroundColor: '#ff007f',
             border: 'none',
-            padding: '1rem 1.5rem',
-            borderRadius: '1rem',
-            fontSize: '1rem',
+            borderRadius: '0.5rem',
+            color: '#fff',
             cursor: 'pointer'
           }}
         >
-          Odeslat
+          Poslat
         </button>
       </div>
     </div>
